@@ -1,7 +1,7 @@
 Feature: DemoQA Login
 
   Scenario: Can login into site and add a product to the basket, checkout and pay for item.
-    Given I access the DemoQA login page
+    Given I access the DemoQA home page
     And I select the click the my account button
     And I select input correct username and password, and then login
     And I select a blog post
