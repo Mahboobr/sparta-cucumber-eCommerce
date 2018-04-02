@@ -15,6 +15,10 @@ class DemoqaHomepage
     click_link('My Account')
   end
 
+  def click_register_link
+    click_link('Register')
+  end
+
   def slider_image_click
     find(SLIDER_IMAGE).click
   end

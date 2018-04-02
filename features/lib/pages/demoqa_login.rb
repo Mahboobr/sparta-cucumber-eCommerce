@@ -16,7 +16,6 @@ class DemoqaLogInPage
   end
 
   def click_login
-    # find_button(LOGIN_BUTTON_VALUE).click
     click_button('Login »')
   end
 

@@ -5,6 +5,7 @@ require_relative 'pages/demoqa_item'
 require_relative 'pages/demoqa_checkout'
 require_relative 'pages/demoqa_shipping'
 require_relative 'pages/demoqa_confirm'
+require_relative 'pages/temp_email'
 
 module DemoqaSite
 
@@ -34,6 +35,10 @@ module DemoqaSite
 
   def demoqa_confirm
     DemoqaConfirmationPage.new
+  end
+
+  def temp_email
+    TempEmail.new
   end
 
 end

@@ -9,15 +9,15 @@ And("I select the click the my account button") do
 end
 
 And("I select input correct username and password, and then login") do
-  demoqa_login.fill_username("mabs")
-  demoqa_login.fill_password("Test123456789")
-  demoqa_login.click_login
-  sleep 5
+  # demoqa_login.fill_username("mabs")
+  # demoqa_login.fill_password("Test123456789")
+  # demoqa_login.click_login
+  # sleep 5
 end
 
 And("I select a blog post") do
-  demoqa_my_account.click_more_details
-  sleep 2
+  # demoqa_my_account.click_more_details
+  # sleep 2
 end
 
 
@@ -65,8 +65,8 @@ end
 
 # Scenario 2
 Given("I click one of the items on show") do
-  demoqa_homepage.slider_image_click
-  sleep 2
+  # demoqa_homepage.slider_image_click
+  # sleep 2
 end
 
 And("I click the image of the item to see a larger image") do
@@ -95,7 +95,7 @@ end
 
 # Scenario 3
 Given("I click on the search bar and enter search criteria") do
-  demoqa_homepage.fill_search("phone")
+  # demoqa_homepage.fill_search("phone")
 end
 
 And("I click your details, edit details, and save profile") do
@@ -121,4 +121,34 @@ end
 
 And("I check the same as billing address checkbox") do
   demoqa_shipping.check_same_as_billing
+end
+
+
+# register email
+Given("I have created an email address") do
+  temp_email.visit_temp_email
+  temp_email.uncheck_alias
+  @email_address = temp_email.find_email.class
+end
+
+Given("I click register") do
+  demoqa_homepage.click_register_link
+end
+
+Given("I enter username and email") do
+  temp_email.fill_new_user("spartatest4")
+  temp_email.fill_email(@email_address)
+  sleep 3
+end
+
+Given("I check my email to find password link") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I set a new password and login") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I visit the website") do
+  pending # Write code here that turns the phrase above into concrete actions
 end

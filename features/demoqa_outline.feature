@@ -42,3 +42,19 @@ Feature: DemoQA Login
     And I check the same as billing address checkbox
     When I click the purchase button
     Then I receive confirmation that order is pending
+
+  Scenario: I can register with the website, create an account and buy products
+    Given I have created an email address
+    And I access the DemoQA home page
+    And I select the click the my account button
+    And I click register
+    And I enter username and email
+    And I check my email to find password link
+    And I set a new password and login
+    And I visit the website
+    And I click one of the items on show
+    And I add that item to my cart
+    And I click the basket icon
+    And I click the continue button
+    When I click the purchase button
+    Then I receive confirmation that order is pending
