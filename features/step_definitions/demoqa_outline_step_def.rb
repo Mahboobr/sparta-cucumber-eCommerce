@@ -122,3 +122,30 @@ end
 And("I check the same as billing address checkbox") do
   demoqa_shipping.check_same_as_billing
 end
+
+# Testing using table
+Given("I have a data table of usernames, passwords, and errors") do |table|
+  @table = table.rows
+  demoqa_homepage.visit_home
+  demoqa_homepage.my_account_click
+
+end
+
+When("I enter the combinations of usernames and passwords") do
+  @table.each do |i|
+    demoqa_login.fill_username("#{i[0]}")
+    demoqa_login.fill_password("#{i[1]}")
+    demoqa_login.click_login
+    sleep 3
+  end
+end
+
+Then("I enter the combinations of usernames and passwords, I get an error message") do
+  @table.each do |i|
+    demoqa_login.fill_username("#{i[0]}")
+    demoqa_login.fill_password("#{i[1]}")
+    demoqa_login.click_login
+    expect(page).to have_css("p", :text => "#{i[3]}")
+    sleep 3
+  end
+end

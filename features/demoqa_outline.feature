@@ -42,3 +42,13 @@ Feature: DemoQA Login
     And I check the same as billing address checkbox
     When I click the purchase button
     Then I receive confirmation that order is pending
+
+  Scenario: I am able to try different combinations of invalid usernames and passwords to log in with
+    Given I have a data table of usernames, passwords, and errors
+      | USERNAME | PASSWORD | ERRORS |
+      | mabs | Bloop123 | ERROR: The password you entered for the username mabs is incorrect. |
+      | Sparta | Test123 | ERROR: Invalid username. |
+      |  | Test123 | ERROR: The username field is empty. |
+      | mabs |  | ERROR: The password field is empty. |
+      |  |  | Please enter your username and password. |
+    Then I enter the combinations of usernames and passwords, I get an error message
