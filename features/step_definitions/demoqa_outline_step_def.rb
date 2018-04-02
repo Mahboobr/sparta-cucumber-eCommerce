@@ -4,8 +4,8 @@ Given("I access the DemoQA home page") do
 end
 
 And("I select the click the my account button") do
-  # demoqa_homepage.my_account_click
-  # sleep 2
+  demoqa_homepage.my_account_click
+  sleep 2
 end
 
 And("I select input correct username and password, and then login") do
@@ -37,6 +37,7 @@ And("I click the continue button") do
 end
 
 And("I fill out shipping details") do
+  sleep 2
   demoqa_shipping.current_country
   demoqa_shipping.current_county("Essex")
   demoqa_shipping.enter_email("test1@testing.com")
