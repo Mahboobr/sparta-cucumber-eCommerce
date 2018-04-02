@@ -9,4 +9,10 @@ class DemoqaConfirmationPage
     CONFIRMATION_TEXT
   end
 
+  def logout
+    click_link('Logout')
+  end
+
+
+
 end

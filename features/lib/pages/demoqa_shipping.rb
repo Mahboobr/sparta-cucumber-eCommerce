@@ -16,6 +16,12 @@ class DemoqaShippingPage
   PHONE_NUMBER = "collected_data[18]"
   SAME_AS_BILLING = "shippingSameBilling"
   PURCHASE = "Purchase"
+  NEW_SHIPPING_FIRST_NAME = "collected_data[11]"
+  NEW_SHIPPING_LAST_NAME = "collected_data[12]"
+  NEW_SHIPPING_ADDRESS = "collected_data[13]"
+  NEW_SHIPPING_CITY = "collected_data[14]"
+  NEW_SHIPPING_COUNTY_2ND = "collected_data[15]"
+  NEW_SHIPPING_POST_CODE = "collected_data[17]"
 
   def current_country
     select('United Kingdom', :from => COUNTRY )
@@ -37,24 +43,48 @@ class DemoqaShippingPage
     fill_in(FIRST_NAME, with: input)
   end
 
+  def enter_new_first_name(input)
+    fill_in(NEW_SHIPPING_FIRST_NAME, with: input)
+  end
+
   def enter_last_name(input)
     fill_in(LAST_NAME, with: input)
+  end
+
+  def enter_new_last_name(input)
+    fill_in(NEW_SHIPPING_LAST_NAME, with: input)
   end
 
   def enter_address(input)
     fill_in(ADDRESS, with: input)
   end
 
+  def enter_new_address(input)
+    fill_in(NEW_SHIPPING_ADDRESS, with: input)
+  end
+
   def enter_city(input)
     fill_in(CITY, with: input)
+  end
+
+  def enter_new_city(input)
+    fill_in(NEW_SHIPPING_CITY, with: input)
   end
 
   def enter_county_second(input)
     fill_in(COUNTY_2ND, with: input)
   end
 
+  def enter_new_county_second(input)
+    fill_in(NEW_SHIPPING_COUNTY_2ND, with: input)
+  end
+
   def enter_post_code(input)
     fill_in(POST_CODE, with: input)
+  end
+
+  def enter_new_post_code(input)
+    fill_in(NEW_SHIPPING_POST_CODE, with: input)
   end
 
   def enter_phone(input)
@@ -63,6 +93,10 @@ class DemoqaShippingPage
 
   def check_same_as_billing
     check(SAME_AS_BILLING)
+  end
+
+  def uncheck_same_as_billing
+    uncheck(SAME_AS_BILLING)
   end
 
   def click_purchase

@@ -1,6 +1,10 @@
 require_relative 'pages/demoqa_homepage'
 require_relative 'pages/demoqa_login'
 require_relative 'pages/demoqa_myaccount'
+require_relative 'pages/demoqa_item'
+require_relative 'pages/demoqa_checkout'
+require_relative 'pages/demoqa_shipping'
+require_relative 'pages/demoqa_confirm'
 
 module DemoqaSite
 

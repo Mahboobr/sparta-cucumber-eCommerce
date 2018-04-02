@@ -4,15 +4,15 @@ Given("I access the DemoQA home page") do
 end
 
 And("I select the click the my account button") do
-  demoqa_homepage.my_account_click
-  sleep 2
+  # demoqa_homepage.my_account_click
+  # sleep 2
 end
 
 And("I select input correct username and password, and then login") do
   demoqa_login.fill_username("mabs")
   demoqa_login.fill_password("Test123456789")
   demoqa_login.click_login
-  sleep 2
+  sleep 5
 end
 
 And("I select a blog post") do
@@ -32,9 +32,6 @@ And("I click the basket icon") do
 end
 
 And("I click the continue button") do
-  # demoqa_checkout.change_quantity_row_1(32)
-  # demoqa_checkout.update_quantity
-  # sleep 2
   demoqa_checkout.continue_checkout
   sleep 2
 end
@@ -61,4 +58,35 @@ end
 
 Then("I receive confirmation that order is pending") do
   expect(page).to have_css("p", :text => demoqa_confirm.confirm_text)
+  demoqa_confirm.logout
+  sleep 2
+end
+
+# Scenario 2
+Given("I click one of the items on show") do
+  demoqa_homepage.slider_image_click
+  sleep 2
+end
+
+Given("I click the image of the item to see a larger image") do
+  demoqa_item_page.click_product_image
+  sleep 1
+  demoqa_item_page.close_product_image
+  sleep 2
+end
+
+Given("I change the quantity of the item") do
+  demoqa_checkout.change_quantity_row_1(32)
+  demoqa_checkout.update_quantity
+  sleep 2
+end
+
+Given("I change the shipping address") do
+  demoqa_shipping.uncheck_same_as_billing
+  demoqa_shipping.enter_new_first_name("Jiminy")
+  demoqa_shipping.enter_new_last_name("Billybob")
+  demoqa_shipping.enter_new_address("789 Real Avenue")
+  demoqa_shipping.enter_new_city("Birmingham")
+  demoqa_shipping.enter_new_county_second("Sussex")
+  demoqa_shipping.enter_new_post_code("BM1 3JD")
 end

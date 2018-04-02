@@ -5,6 +5,7 @@ class DemoqaHomepage
 
   HOMEPAGE_URL = 'http://store.demoqa.com/'
 
+  SLIDER_IMAGE = "div[class='featured_image']"
 
   def visit_home
     visit(HOMEPAGE_URL)
@@ -12,6 +13,10 @@ class DemoqaHomepage
 
   def my_account_click
     click_link('My Account')
+  end
+
+  def slider_image_click
+    find(SLIDER_IMAGE).click
   end
 
 end

@@ -11,4 +11,12 @@ class DemoqaItemPage
     click_link('Checkout')
   end
 
+  def click_product_image
+    find("img[class='product_image']").click
+  end
+
+  def close_product_image
+    find("a[class='pp_close']").click
+  end
+
 end
