@@ -10,4 +10,8 @@ class DemoqaHomepage
     visit(HOMEPAGE_URL)
   end
 
+  def my_account_click
+    click_link('My Account')
+  end
+
 end
