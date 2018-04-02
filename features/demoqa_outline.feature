@@ -33,7 +33,7 @@ Feature: DemoQA Login
     And I change the quantity of the item
     And I click the continue button
     And I select input correct username and password, and then login
-    And I click my account
+    And I select the click the my account button
     And I click your details, edit details, and save profile
     And I hover over menu bar, and select a product category, change the view, and add to cart
     And I click the basket icon

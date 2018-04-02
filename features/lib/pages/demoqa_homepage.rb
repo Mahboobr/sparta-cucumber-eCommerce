@@ -19,4 +19,8 @@ class DemoqaHomepage
     find(SLIDER_IMAGE).click
   end
 
+  def fill_search(search)
+    fill_in("s", with: search).send_keys :enter
+  end
+
 end

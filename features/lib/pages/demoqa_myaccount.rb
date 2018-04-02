@@ -15,4 +15,24 @@ class DemoqaMyAccountPage
     click_link(IPHONE_5)
   end
 
+  def go_to_your_details
+    click_link('Your Details')
+  end
+
+  def save_profile
+    click_button('Save Profile')
+  end
+
+  def hover_product_category
+    find("li[id='menu-item-33']").hover
+  end
+
+  def click_macbook_dropdown
+    find("li[id='menu-item-39']").click
+  end
+
+  def change_view
+    find("a[class='grid ']").click
+  end
+
 end

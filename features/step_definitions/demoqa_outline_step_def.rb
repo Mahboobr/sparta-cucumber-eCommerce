@@ -69,20 +69,20 @@ Given("I click one of the items on show") do
   sleep 2
 end
 
-Given("I click the image of the item to see a larger image") do
+And("I click the image of the item to see a larger image") do
   demoqa_item_page.click_product_image
   sleep 1
   demoqa_item_page.close_product_image
   sleep 2
 end
 
-Given("I change the quantity of the item") do
+And("I change the quantity of the item") do
   demoqa_checkout.change_quantity_row_1(32)
   demoqa_checkout.update_quantity
   sleep 2
 end
 
-Given("I change the shipping address") do
+And("I change the shipping address") do
   demoqa_shipping.uncheck_same_as_billing
   demoqa_shipping.enter_new_first_name("Jiminy")
   demoqa_shipping.enter_new_last_name("Billybob")
@@ -90,4 +90,35 @@ Given("I change the shipping address") do
   demoqa_shipping.enter_new_city("Birmingham")
   demoqa_shipping.enter_new_county_second("Sussex")
   demoqa_shipping.enter_new_post_code("BM1 3JD")
+end
+
+
+# Scenario 3
+Given("I click on the search bar and enter search criteria") do
+  demoqa_homepage.fill_search("phone")
+end
+
+And("I click your details, edit details, and save profile") do
+  demoqa_my_account.go_to_your_details
+  demoqa_shipping.enter_address("75 Fake Drive")
+  demoqa_shipping.enter_city("London")
+  demoqa_shipping.enter_county_second("Essex")
+  demoqa_shipping.enter_post_code("E13 4AA")
+  demoqa_my_account.save_profile
+end
+
+And("I hover over menu bar, and select a product category, change the view, and add to cart") do
+  demoqa_my_account.hover_product_category
+  demoqa_my_account.click_macbook_dropdown
+  demoqa_my_account.change_view
+  demoqa_item_page.click_add_to_cart
+  sleep 2
+end
+
+And("I remove an item from the basket") do
+  demoqa_checkout.continue_remove
+end
+
+And("I check the same as billing address checkbox") do
+  demoqa_shipping.check_same_as_billing
 end

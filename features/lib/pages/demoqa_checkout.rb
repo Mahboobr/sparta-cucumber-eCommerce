@@ -5,6 +5,7 @@ class DemoqaCheckoutPage
 
   QUANTITY = "quantity"
   UPDATE_BTN_VALUE = "Update"
+  REMOVE_BTN_VALUE = "Remove"
   CONTINUE = "Continue"
 
   def change_quantity_row_1(num)
@@ -22,6 +23,10 @@ class DemoqaCheckoutPage
 
   def change_quantity_row_2
     find(:xpath, '//*[@id="checkout_page_container"]/div[1]/table/tbody/tr[3]/td[3]/form/input[1]').text
+  end
+
+  def continue_remove
+    click_button(REMOVE_BTN_VALUE)
   end
 
 end
